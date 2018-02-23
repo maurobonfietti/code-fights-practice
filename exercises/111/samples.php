@@ -19,4 +19,20 @@ class Samples
 
         return $samples;
     }
+
+    public static function getExpectedOutput()
+    {
+        return [
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true,
+        ];
+    }
 }
