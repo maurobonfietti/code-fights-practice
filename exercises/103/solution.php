@@ -1,5 +1,6 @@
 <?php
 
-function checkPalindrome($inputString) {
+function checkPalindrome($inputString)
+{
     return $inputString === strrev($inputString);
 }

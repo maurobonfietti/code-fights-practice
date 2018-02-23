@@ -1,6 +1,7 @@
 <?php
 
-function makeArrayConsecutive2($statues) {
+function makeArrayConsecutive2($statues)
+{
     $max = max($statues);
     $min = min($statues);
     $count = count($statues);
