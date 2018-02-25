@@ -15,6 +15,7 @@ class Samples
             100000,
             999999,
             123321,
+            123456,
         ];
 
         return $samples;
@@ -33,6 +34,7 @@ class Samples
             false,
             true,
             true,
+            false,
         ];
     }
 }
