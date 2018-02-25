@@ -4,7 +4,7 @@ class Solution
 {
     public function run($x)
     {
-        return $this->isLuckyV2($x);
+        return $this->isLucky($x);
     }
 
     private function isLucky($n)
@@ -18,7 +18,6 @@ class Solution
         $result = array_sum(str_split(substr($n, 0, strlen($n) / 2)))
             == array_sum(str_split(substr($n, strlen($n) / 2)));
 
-//        print_r($result); exit;
         return $result;
     }
 }
