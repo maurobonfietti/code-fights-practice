@@ -9,18 +9,16 @@ $output = Samples::getExpectedOutput();
 $solution = new Solution();
 $solutions = [];
 
-foreach ($samples as $sample) {
-    $solutions[] = $solution->run($sample);
-}
-
 echo "Results: \n";
 
-foreach ($solutions as $key => $solution) {
-    if ($solution === $output[$key]) {
+foreach ($samples as $key => $sample) {
+    $result = $solution->run($sample);
+    if ($result === $output[$key]) {
         echo "Test $key: OK.\n";
     } else {
         echo "Test $key: FAIL.\n";
     }
+    $solutions[] = $result;
 }
 
 if ($output === $solutions) {
