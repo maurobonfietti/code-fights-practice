@@ -8,20 +8,21 @@ $solutions = [];
 $tests = $solution::getInput();
 $output = $solution::getOutput();
 
-echo "Results: \n";
-
-foreach ($tests as $i => $test) {
+$i = 1;
+echo "TESTS: \n";
+foreach ($tests as $t => $test) {
     $result = $solution->run($test);
-    if ($result === $output[$i]) {
-        echo "Test $i: OK.\n";
+    if ($result === $output[$t]) {
+        echo "$i- OK.\n";
     } else {
-        echo "Test $i: FAIL.\n";
+        echo "$i- FAIL.\n";
     }
     $solutions[] = $result;
+    $i++;
 }
 
 if ($output === $solutions) {
-    echo "Tests CORRECT :-) \n";
+    echo "CORRECT :-) \n";
 } else {
-    echo "Tests FAILURES..! \n";
+    echo "FAILURES..! \n";
 }
