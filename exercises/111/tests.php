@@ -1,22 +1,21 @@
 #!/usr/bin/php
 <?php
 
-require_once 'samples.php';
 require_once 'solution.php';
 
-$samples = Samples::getSamples();
-$output = Samples::getExpectedOutput();
 $solution = new Solution();
 $solutions = [];
+$tests = $solution::getInput();
+$output = $solution::getOutput();
 
 echo "Results: \n";
 
-foreach ($samples as $key => $sample) {
-    $result = $solution->run($sample);
-    if ($result === $output[$key]) {
-        echo "Test $key: OK.\n";
+foreach ($tests as $i => $test) {
+    $result = $solution->run($test);
+    if ($result === $output[$i]) {
+        echo "Test $i: OK.\n";
     } else {
-        echo "Test $key: FAIL.\n";
+        echo "Test $i: FAIL.\n";
     }
     $solutions[] = $result;
 }
