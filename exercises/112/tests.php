@@ -3,15 +3,22 @@
 
 require_once 'solution.php';
 
-$solution = new Solution();
+$input = [
+    [-1, 150, 190, 170, -1, -1, 160, 180],
+    [-1, -1, -1, -1, -1],
+    [4, 2, 9, 11, 2, 16],
+];
+$output = [
+    [-1, 150, 160, 170, -1, -1, 180, 190],
+    [-1, -1, -1, -1, -1],
+    [2, 2, 4, 9, 11, 16],
+];
 $solutions = [];
-$tests = $solution::getInput();
-$output = $solution::getOutput();
 
 $i = 1;
 echo "TESTS: \n";
-foreach ($tests as $t => $test) {
-    $result = $solution->run($test);
+foreach ($input as $t => $test) {
+    $result = sortByHeight($test);
     if ($result === $output[$t]) {
         echo "$i- OK.\n";
     } else {
