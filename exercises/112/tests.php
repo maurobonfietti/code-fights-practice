@@ -8,11 +8,13 @@ $input = [
     [-1, -1, -1, -1, -1],
     [4, 2, 9, 11, 2, 16],
 ];
+
 $output = [
     [-1, 150, 160, 170, -1, -1, 180, 190],
     [-1, -1, -1, -1, -1],
     [2, 2, 4, 9, 11, 16],
 ];
+
 $solutions = [];
 
 $i = 1;
@@ -24,7 +26,9 @@ foreach ($input as $t => $test) {
     } else {
         echo "$i- FAIL.\n";
     }
-    print_r($result);
+    if (isset($argv[1]) && $argv[1] === "-v") {
+        print_r($result);
+    }
     $solutions[] = $result;
     $i++;
 }
