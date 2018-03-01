@@ -1,11 +1,10 @@
-checkPalindrome
-===============
+# checkPalindrome
 
 Given the string, check if it is a palindrome.
 
 A palindrome is a string that reads the same left-to-right and right-to-left.
 
-Example
+## Example
 
 For inputString = "aabaa", the output should be
 checkPalindrome(inputString) = true;
