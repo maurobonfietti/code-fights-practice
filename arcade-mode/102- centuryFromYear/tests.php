@@ -38,13 +38,14 @@ echo "TESTS: \n";
 foreach ($input as $t => $test) {
     $result = centuryFromYear($test);
     if ($result === $output[$t]) {
-        echo "$i- OK.\n";
+        echo "$i- OK.";
     } else {
-        echo "$i- FAIL.\n";
+        echo "$i- FAIL.";
     }
     if (isset($argv[1]) && $argv[1] === "-v") {
-        print_r($result);
+        echo " Input: $test => Output: $result.";
     }
+    echo "\n";
     $solutions[] = $result;
     $i++;
 }
