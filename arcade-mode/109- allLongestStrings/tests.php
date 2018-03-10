@@ -53,7 +53,7 @@ $solutions = [];
 $i = 1;
 echo "TESTS: \n";
 foreach ($input as $t => $test) {
-    $result = allLongestStrings($test);
+    $result = allLongestStringsV2($test);
     if ($result === $output[$t]) {
         echo "$i- OK.";
     } else {
