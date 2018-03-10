@@ -10,18 +10,13 @@ function allLongestStrings($inputArray)
 
 function allLongestStringsV2($inputArray)
 {
-    $max = strlen($inputArray[0]);
-    for ($i = 1; $i < count($inputArray); $i++) {
-        if (strlen($inputArray[$i]) > $max) {
-            $max = strlen($inputArray[$i]);
-        }
-    }
-    $res = [];
+    $max = max(array_map('strlen', $inputArray));
+    $result = [];
     for ($i = 0; $i < count($inputArray); $i++) {
-        if (strlen($inputArray[$i]) == $max) {
-            array_push($res, $inputArray[$i]);
+        if (strlen($inputArray[$i]) === $max) {
+            array_push($result, $inputArray[$i]);
         }
     }
 
-    return $res;
+    return $result;
 }
