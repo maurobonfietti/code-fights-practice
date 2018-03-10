@@ -1,17 +1,9 @@
 <?php
 
-class Solution
+function allLongestStrings($inputArray)
 {
-    public function run($x)
-    {
-        return $this->allLongestStrings($x);
-    }
+    $strLengths = array_map('strlen', $inputArray);
+    $keys = array_keys($strLengths, max($strLengths));
 
-    private function allLongestStrings($inputArray)
-    {
-        $strLengths = array_map('strlen', $inputArray);
-        $keys = array_keys($strLengths, max($strLengths));
-
-        return array_values(array_intersect_key($inputArray, array_flip($keys)));
-    }
+    return array_values(array_intersect_key($inputArray, array_flip($keys)));
 }

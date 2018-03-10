@@ -1,19 +1,77 @@
 #!/usr/bin/php
 <?php
 
-require_once 'samples.php';
 require_once 'solution.php';
 
-$samples = Samples::getSamples();
-$solution = new Solution();
+$input = [
+    [
+        "aba",
+        "aa",
+        "ad",
+        "vcd",
+        "aba",
+    ],
+    ["aa"],
+    [
+        "abc",
+        "eeee",
+        "abcd",
+        "dcd"
+    ],
+    [
+        "a",
+        "abc",
+        "cbd",
+        "zzzzzz",
+        "a",
+        "abcdef",
+        "asasa",
+        "aaaaaa"
+    ],
+];
+
+$output = [
+    [
+        "aba",
+        "vcd",
+        "aba",
+    ],
+    ["aa"],
+    [
+        "eeee",
+        "abcd",
+    ],
+    [
+        "zzzzzz",
+        "abcdef",
+        "aaaaaa"
+    ],
+];
+
 $solutions = [];
 
-foreach ($samples as $sample) {
-    $solutions[] = $solution->run($sample);
+$i = 1;
+echo "TESTS: \n";
+foreach ($input as $t => $test) {
+    $result = allLongestStrings($test);
+    if ($result === $output[$t]) {
+        echo "$i- OK.";
+    } else {
+        echo "$i- FAIL.";
+    }
+    if (isset($argv[1]) && $argv[1] === "-v") {
+        echo "\n";
+        echo "Input: ";
+        print_r($test);
+        echo "Output: " . var_export($result, true);
+    }
+    echo "\n";
+    $solutions[] = $result;
+    $i++;
 }
 
-echo "Samples: \n";
-print_r($samples);
-
-echo "Solutions: \n";
-print_r($solutions);
+if ($output === $solutions) {
+    echo "CORRECT :-) \n";
+} else {
+    echo "FAILURES..! \n";
+}
