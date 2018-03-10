@@ -11,5 +11,6 @@ function matrixElementsSum($matrix)
             $result += $matrix[$j][$i];
         }
     }
+
     return $result;
 }
