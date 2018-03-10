@@ -28,6 +28,12 @@ $input = [
         "asasa",
         "aaaaaa"
     ],
+    [
+        "abc",
+        "abcd",
+        "ab",
+        "1234",
+    ],
 ];
 
 $output = [
@@ -45,6 +51,10 @@ $output = [
         "zzzzzz",
         "abcdef",
         "aaaaaa"
+    ],
+    [
+        "abcd",
+        "1234",
     ],
 ];
 
