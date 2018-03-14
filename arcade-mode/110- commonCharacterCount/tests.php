@@ -1,19 +1,63 @@
 #!/usr/bin/php
 <?php
 
-require_once 'samples.php';
 require_once 'solution.php';
 
-$samples = Samples::getSamples();
-$solution = new Solution();
+$input = [
+    [
+        "aabcc",
+        "adcaa",
+    ],
+    [
+        "zzzz",
+        "zzzzzzz",
+    ],
+    [
+        "abca",
+        "xyzbac",
+    ],
+    [
+        "a",
+        "b",
+    ],
+    [
+        "a",
+        "aaa",
+    ],
+];
+
+$output = [
+    3,
+    4,
+    3,
+    0,
+    1,
+];
+
 $solutions = [];
 
-foreach ($samples as $sample) {
-    $solutions[] = $solution->run($sample[0], $sample[1]);
+$i = 1;
+echo "TESTS: \n";
+foreach ($input as $t => $test) {
+    $result = commonCharacterCount($test[0], $test[1]);
+    if ($result === $output[$t]) {
+        echo "$i- OK.";
+    } else {
+        echo "$i- FAIL.";
+    }
+    if (isset($argv[1]) && $argv[1] === "-v") {
+        echo "\n";
+        echo "Input: ";
+        print_r($test);
+        echo "Output: " . var_export($result, true);
+    }
+    echo "\n";
+    $solutions[] = $result;
+    $i++;
 }
 
-echo "Samples: \n";
-print_r($samples);
-
-echo "Solutions: \n";
-print_r($solutions);
+if ($output === $solutions) {
+    echo "CORRECT :-) \n";
+} else {
+    echo "FAILURES..! \n";
+}
