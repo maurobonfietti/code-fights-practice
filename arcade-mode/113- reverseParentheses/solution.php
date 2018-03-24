@@ -1,6 +1,7 @@
 <?php
 
-function reverseParentheses($s) {
+function reverseParentheses($s)
+{
     $loop = 0;
     for ($i = 0; $i < strlen($s); $i++) {
         $k = $s[$i];
@@ -23,7 +24,8 @@ function reverseParentheses($s) {
     return $s;
 }
 
-function reverse(&$s, $i, $j) {
+function reverse(&$s, $i, $j)
+{
     $max = intval(round($i + (($j - $i) / 2)));
     for ($k = $i; $k < $max; $k++) {
         $t = $max + ($max - $k);
@@ -34,7 +36,8 @@ function reverse(&$s, $i, $j) {
     }
 }
 
-function po(&$s, $i, $j) {
+function po(&$s, $i, $j)
+{
     $t = $s[$i];
     $s[$i] = $s[$j];
     $s[$j] = $t;

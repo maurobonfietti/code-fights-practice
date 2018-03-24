@@ -7,7 +7,7 @@ function almostIncreasingSequence($sequence)
         if ($sequence[$i] >= $sequence[$i + 1]) {
             $count++;
         }
-        if (($i - 1 >= 0) && 
+        if (($i - 1 >= 0) &&
             (count($sequence) - 2 > $i) &&
             ($sequence[$i - 1] >= $sequence[$i + 1]) &&
             ($sequence[$i] >= $sequence[$i + 2])
