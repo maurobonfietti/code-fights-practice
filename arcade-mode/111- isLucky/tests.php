@@ -36,7 +36,7 @@ $solutions = [];
 $i = 1;
 echo "TESTS: \n";
 foreach ($input as $t => $test) {
-    $result = isLuckyV2($test);
+    $result = isLuckyV3($test);
     if ($result === $output[$t]) {
         echo "$i- OK.";
     } else {
